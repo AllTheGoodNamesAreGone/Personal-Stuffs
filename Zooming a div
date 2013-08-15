@@ -1,0 +1,29 @@
+<html>
+<head>
+<body onkeypress="zoom(event)" onload="create()">
+<script>
+function create(){
+var d=document.createElement('div');
+d.id='div';
+d.style.background='red';
+d.style.height='30px';
+d.style.width='30px';
+d.style.position='absolute';
+d.style.left='200px';
+d.style.top='200px';
+//d.innerHTML="<img src='tree.jpg' height='30px' width='30px'>";
+document.body.appendChild(d);
+}
+var h=30; 
+var w=30;
+function zoom(k){ 
+var q=document.getElementById('div').style;
+q.left=215-w/2+'px';
+q.top=215-h/2+'px';
+q.height=h+'px';
+q.width=w+'px';
+ h+=10;w+=10;
+}
+</script>
+</body>
+</html>
