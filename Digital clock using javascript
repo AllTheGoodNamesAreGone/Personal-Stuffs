@@ -1,0 +1,53 @@
+<html>
+<head>
+<style type="text/css">
+.clock {
+	background-color:black;
+	border:red 2px inset;
+	padding:6px;
+	color:rgb(123,231,312);
+	font-family:"Arial Black", Gadget, sans-serif;
+        font-size:26px;
+        font-weight:bold;
+	letter-spacing: 4px;
+	display:inline;
+	margin-left:300px;
+	margin-top:500px;
+	
+}
+</style>
+</head>
+<body bgcolor="rgb(123,231,312)">
+<h2>Clock by Abhishek Kaushik</h2>
+<div id="clockDisplay" class="clock"></div>
+<script type="text/javascript" language="javascript">
+function time() {
+	var currentTime = new Date();
+	var x = "AM";
+	var h = currentTime.getHours();
+	var m = currentTime.getMinutes();
+    var s = currentTime.getSeconds();
+	
+    if (h == 0) {
+		h = 12;
+	} else if (h > 12) { 
+		h = h - 12;
+		x="PM";
+	}
+	if (h < 10) {
+		h = "0" + h;
+	}
+	if (m < 10) {
+		m = "0" + m;
+	}
+	if (s < 10) {
+		s = "0" + s;
+	}
+    var myClock = document.getElementById('clockDisplay');
+	myClock.innerHTML = h + ":" + m + ":" + s + " " + x;
+	setTimeout(time,1000);
+}
+time();
+</script>
+</body>
+</html>
