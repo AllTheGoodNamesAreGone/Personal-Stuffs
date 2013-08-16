@@ -1,0 +1,26 @@
+<html>
+<head>
+</head>
+<body bgcolor='black'>
+<script>
+var div=document.createElement('div');
+div.id='dog';
+div.style.width=96;
+div.style.height=54;
+div.style.position='absolute';
+div.style.top='300px';
+div.style.left='500px';
+div.style.background='url(dog.png)';
+document.body.appendChild(div);
+var pos=0;i=0;
+function start(){
+if(i%8==0){
+div.style.backgroundPosition=pos+'px';
+pos-=96;}i++;
+
+requestAnimationFrame(start);
+}
+requestAnimationFrame(start);
+</script>
+</body>
+</html>
