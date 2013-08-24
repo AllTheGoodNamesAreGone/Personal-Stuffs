@@ -1,0 +1,192 @@
+<html>
+<head>
+<link rel="stylesheet"  href="style.css" />
+<script src="jquery-1.10.2.min.js" type="text/javascript"></script>
+</head>
+<body  onload="call_freshiee()" >
+<div style='position:absolute;top:30%;left:60%;opacity:0' id='bar'>press x to open the letter</div>
+<audio id="samara" src="samara.mp3" controls loop ></audio>
+<img src="stack4.png" height=100% width=100% style="position:absolute;left:0px;top:0px">
+<img src="bat.gif" id='b1' style="position:absolute;left:10px;top:20px">
+<img src="bat.gif"style="position:absolute;left:80px;top:20px">
+<img src="bat.gif"style="position:absolute;left:160px;top:20px">
+<img src="bat.gif"style="position:absolute;left:900px;top:20px">
+<img src="bat.gif" id='b2' style="position:absolute;left:1000px;top:20px">
+<img src="bat.gif"style="position:absolute;left:1200px;top:20px">
+<img src="bat.gif"style="position:absolute;left:1300px;top:20px">
+<img src="fire.gif" class="fire" style="display:none;position:absolute;top:49%;left:11%;height:55px;width:53px">
+<img src="fire.gif" class="fire" style="display:none;position:absolute;top:47%;left:21%;height:60px;width:60px">
+<img src="fire.gif" class="fire" style="display:none;position:absolute;top:45%;left:92%;height:60px;width:60px">
+<img src="gunstringer.jpg" id='gunstringer' style="display:none;position:absolute;top:47%;left:21%;height:30%;width:20%">
+<div style='position:absolute;top:45%;left:65%;opacity:0;color:red;font-size:30px;font-weight:800;font-family:courier;' id='syn'>press X to open the letter</div>
+    <div id="letter" style="position:absolute;left:340px;top:50px;height:600px;width:800px;background:url(l6.jpg);z-index:3;font-family:Jokerman;font-size:30px;font-weight:bold;border-radius:1%;text-shadow:2px 2px green;padding-left:40px;opacity:0;"></div>
+  <div id="letter_src" style="position:absolute;left:340px;top:50px;display:none">
+	<h3 align="center" style="color:red;font-family:cursive;text-shadow:2px 2px rgb(231,123,12)">Story D'Zombies Attack!!</h3>
+	It was the 0'th day of <span style="color:yellow"> Festember'13...&nbsp </span>A fresher entered D' college,saw the premises completely destroyed by  zombies...
+	<span style="color:red">Zombie</span> made the fresher a skeleton Zombie marionette.Now the boy begins his journey of revenge aided only by his 
+	gritty resolve and trusty pistol...  He will track his betrayers</span> down, one by one, and bring justice upon</span> them... 
+   <span style="color:blue"> D' halloween is up!!</span> This <span style="color:yellow"> Festember,</span>
+   Nothing can stand in his way,nothing will stop him on the vengeance trail.
+    Zombie will be alive now!!! <img src="g3.jpg" style="height:70px;width:200px">
+    </div>
+<div id="Hanging_letter" style="background:rgba(256,256,256,0.5);height:40px;width:70px;top:200px;left:900px;position:absolute;z-Index:2;border-radius:10%;font-size:11px;text-align:center;color:red">Story D'Zombies Attack!!</div>
+<style>
+#Hanging_letter{
+-webkit-transform:skew(10deg,10deg);
+-webkit-transform:rotate(45deg);
+-webkit-transform-origin:1% 2%;
+-webkit-animation:oscillation 4s ease-in-out alternate;
+-webkit-animation-iteration-count:4;}
+@-webkit-keyframes oscillation
+{
+	from
+	{
+		-webkit-transform:rotate(-15deg);
+	}
+	to{
+		-webkit-transform:rotate(100deg);
+	}
+	}
+</style>
+	
+	
+	
+	<script>
+	function letter_writing(){   //function for letter writing
+   
+	 $('#letter').animate({opacity:'0.5'},1000);
+	 $('.fire').fadeIn(3000);
+	 
+    var vLetter = document.getElementById('letter');
+    var iSpeedInk = 1;
+
+    // other variables
+    var sText = document.getElementById('letter_src').innerHTML;
+    var iCurChar = 0;
+    var sChars = '<span>';
+    var iCurInk = 0;
+    var sCurCaret = '';
+    var sCaret = "&nbsp;<img src='pen.gif' style='position:absolute' />";
+
+    var doStep = function doStep() {
+        // current char
+		
+        var sChar = sText.charAt(iCurChar);
+
+        // default char delay
+        var iDelay = 32;
+
+        if (sChar == '') {
+            sCurCaret = '';
+        } else if (sChar == '|') { // we use | symbol to emulate 'error' symbol
+            sChar = '';
+            sChars = sChars.substring(0, sChars.length-1);
+            iDelay = 64;
+        } else if (sChar == '<') { // pass tags
+            var iPos = sText.indexOf('>', iCurChar);
+            sChar = sText.substring(iCurChar, iPos + 1);
+            iCurChar = iPos;
+        } else if (sChar == '&') { // pass html entities
+            var iPos = sText.indexOf(';', iCurChar);
+            sChar = sText.substring(iCurChar, iPos + 1);
+            iCurChar = iPos;
+        } else if (sChar == '.') { // custom delay in case of . symbol
+            iDelay = 300;
+        } else if (sChar == ',') { // custom delay in case of , symbol
+            iDelay = 100;
+        } else if (sChar == ' ') { // custom delay in case of space symbol
+            iDelay = 32;
+        } else if (iCurChar > 2) {
+            sCurCaret = sCaret;
+        }
+        sChars += sChar;
+
+        // hide the caret at the end of the letter
+        if (iCurChar == sText.length - 1){
+            sCurCaret = ''; $('#letter').fadeOut(5000); $('#Hanging_letter').animate({left:'1300px',top:'-100px',height:'10px',width:'5px'},9000);
+			$('#gunstringer').fadeIn(2000).animate({left:'800px',top:'290px'},5000);}
+
+        // update letter with new chars
+        vLetter.innerHTML = sChars + sCurCaret;
+
+        // goto next char
+        iCurChar++;
+	
+
+        // next step
+        if (iCurChar < sText.length) {
+		     if(iCurChar==5){ $('#reading_letter').fadeIn(5000);}
+            setTimeout(doStep, 20 + iDelay);
+        }
+    }
+
+    doStep();
+	
+}
+
+     
+	function fly_birds(){ $(document).ready(function(){ 
+	 $('#b1').animate({left:'800px'},10000).animate({left:'300px'},10000).animate({left:'1300px',top:'400px'},10000).animate({left:'800px',top:'40px'},10000);
+	 $('#b2').animate({left:'-20px',top:'300px'},10000).animate({left:'1300px',top:'400px'},10000).animate({left:'800px'},10000).animate({left:'200px',top:'20px'},8000);
+		  });
+
+	}
+	
+	requestAnimationFrame(fly_birds);
+	</script>
+	<script>
+	var falling_state=false;
+	$(document).ready(function(){
+	$(document).bind('keypress' ,function(e){ 
+	if(e.which==120||e.keycode==120)
+	{
+	if(falling_state==true)
+	{
+	$('#Hanging_letter').animate({top:'300px',left:'840px'},2000,letter_writing);
+	$('#syn').fadeOut(100);
+    falling_state=false;
+	}
+	}
+	});
+	});
+function call_freshiee(){
+document.getElementById('samara').play();
+var div=document.createElement('div');
+div.id='dog';
+div.style.width=85;
+div.style.height=185;
+div.style.position='absolute';
+div.style.top='300px';
+div.style.left='500px';
+div.style.background='url(walk.png)';
+document.body.appendChild(div);
+var pos=0;iP=0;jP=350;
+function start(){
+if(iP%8==0){
+div.style.backgroundPosition=pos+'px';
+pos-=90;}iP+=2;
+if(iP<=760){
+div.style.left=iP+'px';
+div.style.top=jP+'px';jP-=0.36;
+//if(top==450){ $('#fire').fadeIn(2000);}
+if(iP==760){ 
+falling_state=true;
+$('#syn').animate({opacity:'1'},300);
+}
+requestAnimationFrame(start);}
+}
+
+requestAnimationFrame(start);
+}
+</script>
+<script>
+function zombie_attack()
+{ 
+
+
+}
+
+
+</script>
+</body>
+</html>
