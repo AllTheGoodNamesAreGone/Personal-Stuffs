@@ -1,0 +1,528 @@
+<html>
+<head>
+<script src="jquery-1.10.2.min.js"></script>
+</head>
+<body bgcolor="black">
+<style>
+#canvas1{
+-webkit-transform:skew(15deg,0deg);
+//-webkit-transform:rotate(15deg);
+}
+#canvas3{
+-webkit-transform:skew(15deg,0deg);
+//-webkit-transform:rotate(355deg);
+}
+#canvas6{
+-webkit-transform:skew(5deg,0deg);
+//-webkit-transform:rotate(355deg);
+}
+#canvas8{
+-webkit-transform:skew(-25deg,-15deg);
+//-webkit-transform:rotate(5deg);}
+#canvas11{
+background: 
+radial-gradient(circle at 50% 59%, #D2CAAB 3%, #364E27 4%, #364E27 11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 50px 0,
+radial-gradient(circle at 50% 41%, #364E27 3%, #D2CAAB 4%, #D2CAAB 11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 50px 0,
+radial-gradient(circle at 50% 59%, #D2CAAB 3%, #364E27 4%, #364E27 11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 0 50px,
+radial-gradient(circle at 50% 41%, #364E27 3%, #D2CAAB 4%, #D2CAAB 11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 0 50px,
+radial-gradient(circle at 100% 50%, #D2CAAB 16%, rgba(210,202,171,0) 17%),
+radial-gradient(circle at 0% 50%, #364E27 16%, rgba(54,78,39,0) 17%),
+radial-gradient(circle at 100% 50%, #D2CAAB 16%, rgba(210,202,171,0) 17%) 50px 50px,
+radial-gradient(circle at 0% 50%, #364E27 16%, rgba(54,78,39,0) 17%) 50px 50px;
+background-color:#63773F;
+background-size:100px 100px;
+//-webkit-transform:skew(-25deg,-40deg);
+//-webkit-transform:rotate(5deg);
+}
+</style>
+<script>
+window.addEventListener("keydown",call,false); var hit=0;
+function call(e){
+if(e.keyCode==38||e.which==38) hit++;
+if(hit==1)canvas1(); if(hit==2)canvas2(); if(hit==3)canvas3(); if(hit==4)canvas4(); if(hit==5)canvas5(); if(hit==6)canvas6();
+else if(e.keyCode==37||e.which==37) canvas7();
+else if(e.keyCode==13||e.which==13) canvas8();
+else if(e.keyCode==32||e.which==32) canvas9(); 
+else if(e.keyCode==65||e.which==65) canvas10();
+else if(e.keyCode==66||e.which==66) canvas11();
+ }
+/*if(e.keyCode==39||e.which==39)
+canvas1();
+if(e.keyCode==40||e.which==40)
+canvas3();
+if(e.keyCode==37||e.which==37)
+canvas4();
+if(e.keyCode==65||e.which==65)
+canvas5();
+if(e.keyCode==66||e.which==66)
+canvas6();
+}*/
+function canvas1(){
+var canv=document.createElement('canvas'); 
+canv.height=500;
+canv.width=800;
+canv.style.position='absolute';
+canv.style.left=300+'px';
+canv.style.top=100+'px';
+canv.id='canvas1';
+//canv.style.background='rgba(78,34,56,0.6)';
+canv.style.padding='30px';
+document.body.appendChild(canv);
+var ctx=canv.getContext('2d');
+ctx.beginPath();
+ctx.moveTo(48,18);
+ctx.lineTo(500,1);
+ctx.lineWidth=38;
+ctx.strokeStyle='yellow';
+ctx.stroke(); 
+ctx.lineTo(500,308);
+ctx.moveTo(50,9);
+ctx.lineTo(48,348);
+ctx.lineWidth=18;
+ctx.strokeStyle='rgb(213,23,34)';
+ctx.stroke();
+ctx.moveTo(48,45);
+ctx.lineTo(148,75);
+ctx.lineTo(48,105);
+ctx.lineTo(148,135);
+ctx.lineTo(48,165);
+ctx.lineTo(148,195);
+ctx.lineTo(48,225);
+ctx.lineTo(148,255);
+ctx.lineTo(48,285);
+ctx.lineWidth=10;
+ctx.strokeStyle='white';
+ctx.stroke();
+ctx.moveTo(500,45);
+ctx.lineTo(400,75);
+ctx.lineTo(500,105);
+ctx.lineTo(400,135);
+ctx.lineTo(500,165);
+ctx.lineTo(400,195);
+ctx.lineTo(500,225);
+ctx.lineTo(400,255);
+ctx.lineTo(500,285);
+ctx.lineWidth=10;
+ctx.strokeStyle='white';
+ctx.stroke();
+}
+</script>
+<script>
+function canvas2(){
+var canv=document.createElement('canvas');
+canv.id='canvas2'
+canv.height=500;
+canv.width=500;
+//canv.style.background='rgb(12,123,94)';
+canv.style.position='absolute';
+canv.style.left='500px';
+canv.style.top='100px';
+document.body.appendChild(canv);
+var ctx=canv.getContext('2d');
+ctx.beginPath();
+ctx.moveTo(30,30);
+ctx.lineTo(480,130);
+ctx.lineTo(480,30);
+ctx.lineTo(30,130);
+ctx.lineTo(480,130);
+ctx.lineTo(30,130);
+ctx.lineTo(30,20);
+ctx.lineWidth=20;
+
+ctx.moveTo(225,130);
+ctx.lineTo(225,200);
+ctx.bezierCurveTo(290, 290, 300, 200, 220, 400);
+ctx.lineTo(255,530);
+ctx.strokeStyle='rgb(87,86,65)';
+ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(30,130);
+ctx.lineTo(45,200);
+ctx.bezierCurveTo(190, 290, 30, 200, 20, 400);
+ctx.lineTo(35,530);
+ctx.strokeStyle='rgb(13,16,9)';
+ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(480,130);
+ctx.lineTo(450,200);
+ctx.bezierCurveTo(450, 200, 380, 290, 490, 400);
+ctx.lineTo(460,530);
+ctx.strokeStyle='rgb(13,6,9)';
+ctx.stroke();
+}
+</script>
+<script>
+function canvas3(){
+var canv=document.createElement('canvas');
+canv.id='canvas3'
+canv.height=400;
+canv.width=700;
+//xcanv.style.background='rgb(12,123,94)';
+canv.style.position='absolute';
+canv.style.left='500px';
+canv.style.top='100px';
+document.body.appendChild(canv);
+var ctx=canv.getContext('2d');
+ctx.beginPath();
+ctx.rect(60,100,200,100);
+ctx.shadowColor = '#999';
+ctx.shadowBlur = 20;
+ctx.shadowOffsetX = 15;
+ctx.shadowOffsetY = 15;
+ctx.fillStyle='rgb(35,32,23)';
+ctx.fill(); 
+ctx.beginPath();
+ctx.rect(260,20,200,80);
+ctx.shadowColor = '#999';
+ctx.shadowBlur = 20;
+ctx.shadowOffsetX = 15;
+ctx.shadowOffsetY = 15;
+ctx.fillStyle='rgb(35,32,23)';
+ctx.fill();
+ctx.beginPath();
+ctx.rect(460,100,200,100);
+ctx.shadowColor = '#999';
+ctx.shadowBlur = 20;
+ctx.shadowOffsetX = 15;
+ctx.shadowOffsetY = 15;
+ctx.fillStyle='rgb(35,32,23)';
+ctx.fill();
+}
+</script>
+<script>
+function canvas4(){
+var canv=document.createElement('canvas');
+canv.id='canvas4'
+canv.height=400;
+canv.width=700;
+//canv.style.background='rgb(12,123,94)';
+canv.style.position='absolute';
+canv.style.left='500px';
+canv.style.top='100px';
+document.body.appendChild(canv);
+var ctx=canv.getContext('2d');
+ctx.beginPath();
+ctx.arc(200,200,60,0,2*Math.PI,false);
+ctx.fillStyle='rgb(13,6,9)';
+ctx.fill();
+ctx.arc(260,110,50,0,2*Math.PI,false);
+ctx.fillStyle='rgb(13,6,9)';
+ctx.arc(320,200,60,0,2*Math.PI,false);
+ctx.shadowColor = '#999';
+ctx.shadowBlur = 20;
+ctx.shadowOffsetX = -15;
+ctx.shadowOffsetY = 15;
+ctx.fillStyle='rgb(113,86,9)';
+ctx.fill();
+}
+</script>
+<script>
+function canvas5(){
+var canv=document.createElement('canvas');
+canv.id='canvas5'
+canv.height=400;
+canv.width=700;
+//canv.style.background='rgb(33,13,9)';
+canv.style.position='absolute';
+canv.style.left='400px';
+canv.style.top='100px';
+document.body.appendChild(canv);
+var ctx=canv.getContext('2d');
+ctx.moveTo(100,100);
+ctx.lineTo(500,350);
+ctx.lineWidth=18;
+ctx.strokeStyle='yellow';
+ctx.moveTo(500,100);
+ctx.lineTo(100,350);
+ctx.lineWidth=18;
+ctx.strokeStyle='brown';
+ctx.stroke();
+ctx.beginPath();
+ctx.arc(300,121,80,0,2*Math.PI,false);
+ctx.fillStyle='rgb(21,12,34)';
+ctx.fill();
+ctx.beginPath();
+ctx.arc(270,100,10,0,2*Math.PI,false);
+ctx.arc(340,100,10,0,2*Math.PI,false);
+ctx.fillStyle='white';
+ctx.fill();
+ctx.moveTo(370,300);
+ctx.beginPath();
+ctx.arc(300,140,40,0,Math.PI,false);
+ctx.arc(300,140,40,0,Math.PI,false);
+ctx.strokeStyle='white';
+ctx.lineWidth=8;
+ctx.stroke();
+}
+</script>
+<script>
+function canvas6(){
+var canv=document.createElement('canvas');
+canv.id='canvas6'
+canv.height=600;
+canv.width=700;
+//canv.style.background='rgb(33,13,94)';
+canv.style.position='absolute';
+canv.style.left='400px';
+canv.style.top='10px';
+document.body.appendChild(canv);
+var ctx=canv.getContext('2d');
+ctx.beginPath();
+ctx.arc(300,150,120,0,2*Math.PI,false);
+ctx.arc(300,150,100,0,2*Math.PI,false);
+ctx.moveTo(300,150);
+ctx.lineTo(246,70);
+ctx.moveTo(300,150);
+ctx.lineTo(192,102);
+ctx.moveTo(300,150);
+ctx.lineTo(300,32);
+ctx.moveTo(300,150);
+ctx.lineTo(360,65);
+ctx.moveTo(300,150);
+ctx.lineTo(415,105);
+ctx.moveTo(300,150);
+ctx.lineTo(395,170);
+ctx.moveTo(300,150);
+ctx.lineTo(385,240);
+ctx.moveTo(300,150);
+ctx.lineTo(300,251);
+ctx.moveTo(300,150);
+ctx.lineTo(200,220);
+ctx.lineWidth=8;
+ctx.strokeStyle='rgb(113,9,9)';
+ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(178,150);
+ctx.lineTo(80,150);
+ctx.lineTo(80,400);
+ctx.lineTo(30,400);
+ctx.moveTo(423,150);
+ctx.lineTo(520,150);
+ctx.lineTo(520,400);
+ctx.lineTo(570,400);
+ctx.lineWidth=25;
+ctx.strokeStyle='rgb(84,34,21)';
+ctx.stroke();
+}
+function canvas7(){
+var canv=document.createElement('canvas');
+canv.id='canvas7'
+canv.height=600;
+canv.width=700;
+//canv.style.background='rgb(33,13,94)';
+canv.style.position='absolute';
+canv.style.left='400px';
+canv.style.top='10px';
+document.body.appendChild(canv);
+var ctx=canv.getContext('2d');
+ctx.beginPath();
+ctx.rect(20,20,200,200);
+ctx.fillStyle='rgb(21,45,62)';
+ctx.fill();
+ctx.globalAlpha = 0.8;
+ctx.beginPath();
+ctx.rect(70,70,200,200);
+ctx.fillStyle='rgb(87,34,45)';
+ctx.fill();
+ctx.moveTo(20,220);
+ctx.lineTo(70,270);
+ctx.strokeStyle='white';
+ctx.stroke();
+ctx.moveTo(20,20);
+ctx.lineTo(70,70);
+ctx.strokeStyle='black';
+ctx.stroke();
+ctx.moveTo(220,20);
+ctx.lineTo(270,70);
+ctx.strokeStyle='white';
+ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(20,220);
+ctx.lineTo(70,270);
+ctx.lineTo(70,220);
+ctx.closePath();
+ctx.fillStyle='white';
+ctx.fill();
+ctx.globalAlpha = 0.3;
+ctx.beginPath();
+ctx.moveTo(20,20);
+ctx.lineTo(220,20);
+ctx.lineTo(270,70);
+ctx.lineTo(70,70);
+ctx.closePath();
+ctx.fillStyle='green';
+ctx.fill();
+ctx.moveTo(220,220);
+ctx.lineTo(270,270);
+ctx.strokeStyle='white';
+ctx.stroke();
+$(document).ready(function(){
+$('#canvas7').animate({left:'200px',top:'400px'},6000).animate({left:'600px',top:'30px'},6000);});
+}
+
+function canvas8(){
+var canv=document.createElement('canvas');
+canv.id='canvas8'
+canv.height=600;
+canv.width=700;
+canv.style.position='absolute';
+canv.style.left='400px';
+canv.style.top='10px';
+document.body.appendChild(canv);
+var ctx=canv.getContext('2d');
+//ctx.moveTo(30,30);
+ctx.beginPath();
+ctx.bezierCurveTo(20, 20, 100, 190, 40, 300);
+ctx.bezierCurveTo(40, 300, 300, 390, 370, 220);
+ctx.bezierCurveTo(400, 220, 380, 190, 300, 20);
+ctx.closePath();
+ctx.fillStyle='rgb(45,23,32)';
+ctx.fill();
+ctx.beginPath();
+ctx.bezierCurveTo(100, 80, 140, 230, 80, 340);
+ctx.bezierCurveTo(100, 340, 300, 360, 400, 340);
+ctx.bezierCurveTo(400, 340, 380, 190, 370, 80);
+ctx.closePath();
+ctx.fillStyle='rgb(45,53,32)';
+ctx.fill();
+ctx.beginPath();
+ctx.moveTo(20,20);
+ctx.lineTo(100,80);
+ctx.lineTo(370,80);
+ctx.lineTo(300,20);
+ctx.closePath();
+ctx.fillStyle='rgb(23,12,45)';
+ctx.fill();
+ctx.beginPath();
+ctx.moveTo(40,300);
+ctx.lineTo(80,340);
+ctx.lineTo(120,300);
+ctx.closePath();
+ctx.fillStyle='rgb(45,23,32)';
+ctx.fill();
+//ctx.stroke();
+}
+function canvas9(){
+var canv=document.createElement('canvas');
+canv.id='canvas9'
+canv.height=600;
+canv.width=700;
+//canv.style.background='rgb(33,13,94)';
+canv.style.position='absolute';
+canv.style.left='400px';
+canv.style.top='10px';
+document.body.appendChild(canv);
+var ctx=canv.getContext('2d');
+ctx.globalAlpha=0.4;
+ctx.moveTo(100,100);
+ctx.lineTo(180,250);
+ctx.lineTo(40,220);
+ctx.closePath();
+ctx.fillStyle='rgb(37,21,12)';
+ctx.fill();
+ctx.moveTo(100,100);
+ctx.lineTo(350,70);
+ctx.lineTo(460,180);
+ctx.lineTo(180,250);
+ctx.closePath();
+ctx.fillStyle='rgb(40,39,24)';
+ctx.fill();
+}
+function canvas10(){
+var canv=document.createElement('canvas');
+canv.id='canvas10'
+canv.height=600;
+canv.width=700;
+//canv.style.background='rgb(33,13,24)';
+canv.style.position='absolute';
+canv.style.left='400px';
+canv.style.top='10px';
+document.body.appendChild(canv);
+var ctx=canv.getContext('2d');
+ctx.beginPath();
+ctx.bezierCurveTo(20,20,120,80,140,120);
+ctx.bezierCurveTo(140,120,120,140,20,20);
+ctx.lineWidth=2;
+ctx.fillStyle='rgb(47,30,13)';
+ctx.fill();
+ctx.beginPath();
+ctx.bezierCurveTo(140,120,180,80,240,20);
+ctx.bezierCurveTo(240,20,180,130,140,120);
+ctx.lineWidth=2;
+ctx.fillStyle='rgb(47,30,13)';
+ctx.fill();
+ctx.beginPath();
+ctx.bezierCurveTo(140,120,180,120,240,70);
+ctx.bezierCurveTo(240,70,180,180,140,120);
+ctx.lineWidth=2;
+ctx.fillStyle='rgb(47,30,13)';
+ctx.fill();
+ctx.beginPath();
+ctx.bezierCurveTo(142,130,220,240,260,170);
+ctx.bezierCurveTo(260,170,220,280,147,136);
+ctx.lineWidth=2;
+ctx.fillStyle='rgb(47,30,13)';
+ctx.fill();
+ctx.beginPath();
+ctx.bezierCurveTo(142,130,220,240,260,170);
+ctx.bezierCurveTo(260,170,220,280,147,136);
+ctx.lineWidth=2;
+ctx.fillStyle='rgb(47,30,13)';
+ctx.fill();
+ctx.beginPath();
+ctx.bezierCurveTo(142,130,70,240,30,170);
+ctx.bezierCurveTo(30,170,80,280,142,130);
+ctx.lineWidth=2;
+ctx.fillStyle='rgb(47,30,13)';
+ctx.fill();
+ctx.beginPath();
+ctx.moveTo(142,110);
+ctx.lineTo(138,420);
+ctx.lineWidth=9;
+ctx.shadowColor = 'rgb(32,12,13)';
+ctx.shadowBlur = 10;
+ctx.shadowOffsetX = -5;
+ctx.shadowOffsetY = 5;
+ctx.strokeStyle='rgb(47,30,13)';
+ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(138,420);
+ctx.lineTo(87,440);
+ctx.moveTo(138,420);
+ctx.lineTo(187,440);
+ctx.moveTo(138,420);
+ctx.lineTo(77,470);
+ctx.lineWidth=4;
+ctx.strokeStyle='rgb(23,32,44)';
+ctx.stroke();
+}
+function canvas11(){
+var canv=document.createElement('canvas');
+canv.id='canvas11'
+canv.height=600;
+canv.width=700;
+//canv.style.background='rgb(33,13,94)';
+canv.style.position='absolute';
+canv.style.left='400px';
+canv.style.top='10px';
+document.body.appendChild(canv);
+var ctx=canv.getContext('2d');
+ctx.beginPath();
+ctx.arc(100,100,50,0,2*	Math.PI,false);
+//ctx.translate(350,300);
+ctx.scale(4,1);
+//ctx.restore();
+var grd=ctx.createRadialGradient(75,50,55,40,60,100);
+grd.addColorStop(1,"white");
+grd.addColorStop(0,"rgb(32,12,15)");
+
+ctx.fillStyle=grd;
+ctx.fill();
+ctx.lineWidth=15;
+ctx.strokeStyle=grd;
+ctx.stroke();
+
+}
+</script>
+</body>
+</html>
