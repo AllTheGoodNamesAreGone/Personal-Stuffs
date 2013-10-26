@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<conio.h>
+int main(){ 
+	int x,n;
+	scanf("%d",&n);
+	int y=1;
+	while(n--){
+		scanf("%d",&x);
+		int r=x; int m=y;
+		if(x<1)
+		break;
+		else
+		y=lcm(x,y,r,m);
+			}
+			printf("lcm is %d\n",y);
+			
+			getch();
+			return 0;
+	}
+
+int lcm(x,y,r,m){
+	while(x!=y){
+		if(x>y)
+		x-=y;
+		else
+		y-=x;
+		
+}
+return (r*m)/x;
+	
+	
+}
