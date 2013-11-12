@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>CALCULATOR_S</title>
+<link rel="stylesheet" href="css_file.css" type="text/css">
+<script src="javascript_file.js" type="text/javascript"></script>
+</head>
+<body background="T2D'.jpg">
+<div id="uvw">
+<h2 align="center">CALCULATOR USING HTML,CSS & JAVASCRIPT</H2></div>
+<div id="abc">
+<form>
+<input  id="pqr" name="screen" value= "0" ></br></br>
+<input id="xyz" type="button" value='1' onClick="f1(this.form.screen, '1')">
+<input id="xyz" type="button" value= "2" onClick="f1(this.form.screen, '2')">
+<input id="xyz" type="button" value= "3" onClick="f1(this.form.screen, '3')">
+<input id="xyz" type="button" value= "4" onClick="f1(this.form.screen, '4')"></br>
+<input id="xyz" type="button" value= "5" onClick="f1(this.form.screen, '5')">
+<input id="xyz" type="button" value= "6" onClick="f1(this.form.screen, '6')">
+<input id="xyz" type="button" value= "7" onClick="f1(this.form.screen, '7')">
+<input id="xyz" type="button" value= "8" onClick="f1(this.form.screen, '8')"></br>
+<input id="xyz" type="button" value= "9" onClick="f1(this.form.screen, '9')">
+<input id="xyz" type="button" value= "0" onClick="f1(this.form.screen, '0')">
+<input id="xyz" type="button" value= "SQRT" onClick="if (checkSqrt(this.form.screen.value))
+{ sqrt(this.form) }">
+<input id="xyz" type="button" value= "SQUARE" onClick="SQUARE(this.form)">
+
+
+<input id="xyz"type="button" value= "e^x" onClick="exp(this.form)">
+
+
+<input id="xyz" type="button" value= "/" onClick="f1(this.form.screen, '/')">
+<br>
+<input id="xyz" type="button" value= "ln" onClick="if (check_ln(this.form.screen.value))
+{ ln(this.form) }">
+
+<input id="xyz" type="button" value= "*" onClick="f1(this.form.screen, '*')">
+<br>
+
+
+<input id="xyz" type="button" value= "-" onClick="f1(this.form.screen, '-')">
+<br>
+
+<input id="xyz"type="button" value= "." onClick="f1(this.form.screen, '.')">
+<input id="xyz" type="button" value= "+/-" onClick="PLUS_MINUS(this.form.screen)">
+<input id="xyz" type="button" value= "+" onClick="f1(this.form.screen, '+')">
+<br>
+<input id="xyz" type="button" value= "(" onClick="f1(this.form.screen, '(')">
+<input id="xyz" type="button" value= "COS" onClick="cos(this.form)">
+<input id="xyz" type="button" value= "SIN" onClick=" sin(this.form)">
+<input id="xyz" type="button" value= "TAN" onClick="tan(this.form)">
+<input id="xyz" type="button" value= " ) " onClick="f1(this.form.screen, ')')">
+<br>
+<input id="xyz" type="button" value= "CLEAR" onClick="this.form.screen.value = 0 ">
+<input id="xyz" type="button" value= "DELETE  " onClick="DELETE(this.form.screen)">
+<input id="xyz" type="button" value= " EQUALS " name="equals" onClick="RESULT(this.form)"></br>
+<p align="center"><strong>powered by Texas Instrument</strong></p>
+<p align="center">ISO:2013:TI-2013</p>
+</form></div>
+<div id="ONE" style='position:absolute;top:100px;LEFT:100px;width:280px;cursor:pointer;font-size:25px;font-family:courier;font-weight:600;text-align:center;color:violet;background-color:yellow;border:1px solid rgb(213,213,213);'onclick='ONE()';>GUIDE TO USE</div>
+<div id='Display' style='font-size:25px;text-align:center;color:rgb(213,123,123);background-color:green;visibility:hidden;'>
+<div style='border:1px solid rgb(213,213,213);position:absolute;top:140px;left:100px;width:280px;height:350px;background-color:green;font-size:18px;color:black'><li>This is a scientific calculator designed using HTML/CSS/JS</li><br><li>You can Enter the numbers from Your Keyboard Also</li><br><li>+/- has been added.You can add + or - as prefix to any number anytime</li><br><li>To use TRIGO functions be sure you have radian values of angles</li></br><li>Sorry for Not Adding Radian Button.It was due to less time available.I regret!!</li></div>
+<div onclick='TWO()' style='border:1px solid rgb(213,213,213);position:absolute;top:500px;left:100px;width:280px;background-color:rgb(241,241,241);cursor:pointer;'>Hide</div>
+</div>
+
+</body>
+</html>
