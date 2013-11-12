@@ -1,0 +1,16 @@
+#abc
+{ 
+ 
+	width: 350px;
+	background: rgb(50,80,60);
+	margin: 50px 200px 50px 300px;
+	padding: 10px;
+}
+#xyz
+{ height:80px;
+width:250px;
+margin: 50px 200px 50px 300px;
+background-repeat:no-repeat;
+padding:20px;
+border:solid;
+}
