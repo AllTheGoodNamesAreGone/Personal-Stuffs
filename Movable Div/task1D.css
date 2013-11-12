@@ -1,0 +1,43 @@
+#xyz
+{    top:300px;
+     left:500px;
+    width:400px;
+    height:100px;
+	position:absolute;  /* attributes of a div which rotates*/
+
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;     /*animation property of css3,I havent used javascript.I tried doing it by css3 which is short and the newest thing i learnt*/
+    animation-name:circular_path;      
+    animation-duration:5s;    
+
+	
+   -webkit-animation-iteration-count:infinite;
+    -webkit-animation-timing-function:linear;
+    -webkit-animation-name:circular_path;
+    -webkit-animation-duration:5s;        /* for webkit browsers like chrome and safari*/
+	
+	-moz-animation-iteration-count:infinite;
+    -moz-animation-timing-function:linear; /* for mozilla*/
+    -moz-animation-name:circular_path;  
+    -moz-animation-duration:5s;    
+}
+
+
+@keyframes circular_path
+{ 
+0% { transform:rotate(0deg) } 
+100%{ transform:rotate(360deg) }
+}
+
+@-webkit-keyframes circular_path
+{ 
+0% {-webkit-transform:rotate(0deg)}
+100%  { -webkit-transform:rotate(360deg) } 
+}
+
+
+@-moz-keyframes circular_path 
+{ 
+0%{ -moz-transform:rotate(0deg) } 
+100% { -moz-transform:rotate(360deg) } 
+}
